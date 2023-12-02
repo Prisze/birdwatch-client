@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import { BASE_URL } from './config'
 
 import MainPage from '@/components/MainPage.vue'
 
@@ -8,7 +8,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(BASE_URL),
   routes,
 })
 
