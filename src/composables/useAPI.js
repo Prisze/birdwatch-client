@@ -11,6 +11,8 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 })
 
+
+
 const getEmployees = async () => {
   loading.value = true
   const { data, headers } = await api.get('/api/employees', {
