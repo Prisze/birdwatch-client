@@ -8,7 +8,7 @@ const { currentPost, loading } = useAPI()
     <div>
         <Suspense>
         <div v-if="!currentPost">Loading...</div>
-        <div v-else class="flex flex-col justify-center items-center h-screen">
+        <div v-else class="flex flex-col justify-center items-center ">
             <img :src="currentPost.image_url" alt="Image" class="mb-4" style="max-width: 30%; height: auto"/>
             <h1 class="text-black font-bold text-xl mb-2">{{ currentPost.bird.common_name }}</h1>
             <h2 class="text-gray-600 italic mb-4">{{ currentPost.bird.scientific_name }}</h2>

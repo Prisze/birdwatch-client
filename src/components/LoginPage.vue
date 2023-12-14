@@ -34,7 +34,7 @@
 
 <style scoped lang="postcss">
   .login-form {
-    @apply mx-auto mt-80 flex max-w-md flex-col gap-4 rounded-md bg-white p-8 shadow-lg;
+    @apply mx-auto mt-80 flex max-w-md flex-col gap-4 rounded-md bg-orange-200 p-8 shadow-lg;
     & input {
       @apply rounded-md px-4 py-2 text-xl ring-1 ring-slate-300;
     }

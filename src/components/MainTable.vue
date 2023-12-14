@@ -8,9 +8,9 @@ const { posts } = useAPI()
     <div class="container mx-auto p-4 w-3/4">
         <Suspense>
             <table class="min-w-full table-auto mx-auto">
-                <thead class="bg-gray-200">
+                <thead class="bg-blue-100">
                     <tr>
-                        <th class="px-4 py-2">User</th>
+                        <th class="px-4 py-2 ">User</th>
                         <th class="px-4 py-2">Bird</th>
                         <th class="px-4 py-2">Date</th>
                     </tr>
@@ -18,7 +18,7 @@ const { posts } = useAPI()
                 <tbody>
                     <tr v-for="post in posts" 
                         :key="post.id" 
-                        class="bg-white border-b hover:bg-light-blue cursor-pointer"
+                        class="bg-blue-200 border-b hover:bg-light-blue cursor-pointer"
                         @click="this.$router.push(`/post/${post.id}`);">
                         <td class="px-4 py-2">{{ post.user.username }}</td>
                         <td class="px-4 py-2">{{ post.bird.common_name }}</td>
@@ -43,7 +43,7 @@ const { posts } = useAPI()
 }
 
 .hover\:bg-light-blue:hover {
-    background-color: #ebf8ff; /* Adjust the color code as needed */
+    background-color: #fafafa; /* Adjust the color code as needed */
 }
 
 .cursor-pointer {

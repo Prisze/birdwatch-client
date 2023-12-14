@@ -4,6 +4,7 @@
     import useAPI from '@/composables/useAPI'
 
     import PostContent from '@/components/PostContent.vue'
+    import CommentBox from '@/components/CommentBox.vue'
 
     const { getPost, loading } = useAPI()
 
@@ -17,6 +18,7 @@
     <p v-if="loading">Loading...</p>
     <div v-else class="wrapper">
         <PostContent />
+        <CommentBox />
     </div>
 </template>
 

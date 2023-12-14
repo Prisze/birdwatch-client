@@ -34,12 +34,12 @@
 
 <style scoped lang="postcss">
   nav {
-    @apply flex h-20 bg-slate-900 text-slate-200;
+    @apply flex h-20 bg-green-300 text-green-100;
     .wrapper {
       @apply container mx-auto flex w-full items-center justify-between;
       .brand {
         &-title {
-          @apply text-2xl font-bold text-yellow-500;
+          @apply text-center text-2xl  font-bold text-pink-500;
         }
       }
       .menu {
