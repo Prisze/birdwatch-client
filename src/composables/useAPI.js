@@ -7,6 +7,7 @@ const pages = ref(1)
 const loading = ref(false)
 const activePage = ref(1)
 const pageSize = ref(8)
+const birds = ref([])
 
 import {useAuth} from '@/composables/useAuth'
 const { user } = useAuth()
@@ -22,6 +23,12 @@ const getPosts = async () => {
     posts.value = data
     console.log(data)
     loading.value = false
+  }
+
+  const getBirds = async () => {
+    const { data, headers } = await api.get('/api/birds', {})
+    birds.value = data
+    console.log(data)
   }
 
 const getPost = async (id) => {
@@ -43,8 +50,17 @@ const createComment = async (content) => {
   loading.value = false
 }
 
+const createPost = async (bird_id, longitude, latitude, description, image_url) => {
+  let token = await user.value.getIdToken();
+  api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+  const { data, headers } = await api.post('/api/posts/', {bird_id, longitude, latitude, description, image_url})
+  console.log(data)
+  console.log(headers)
+}
+
 const useAPI = () => {
-  return { api, pages, activePage, loading, pageSize, posts, getPosts, getPost, currentPost, createComment }
+  return { api, pages, activePage, loading, pageSize, posts, getPosts, getPost, currentPost, createComment, birds, getBirds, createPost }
 }
 
 export default useAPI

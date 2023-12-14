@@ -21,7 +21,7 @@
           </strong>
         </p>
         <div v-if="isAuthenticated">
-          <RouterLink :to="{ name: 'Settings' }" href="#" class="menu-item">Settings</RouterLink>
+          <RouterLink :to="{ name: 'NewPost' }" href="#" class="menu-item">New Post</RouterLink>
           <button class="menu-logout" @click="logout">Logout</button>
         </div>
         <div v-else>
