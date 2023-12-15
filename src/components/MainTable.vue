@@ -2,6 +2,9 @@
 import useAPI from '@/composables/useAPI'
 
 const { posts } = useAPI()
+import { useRouter, useRoute } from 'vue-router'
+const router = useRouter()
+  const route = useRoute()
 </script>
 
 <template>
@@ -19,7 +22,7 @@ const { posts } = useAPI()
                     <tr v-for="post in posts" 
                         :key="post.id" 
                         class="bg-blue-200 border-b hover:bg-light-blue cursor-pointer"
-                        @click="this.$router.push(`/post/${post.id}`);">
+                        @click="router.push(`/post/${post.id}`);">
                         <td class="px-4 py-2">{{ post.user.username }}</td>
                         <td class="px-4 py-2">{{ post.bird.common_name }}</td>
                         <td class="px-4 py-2">{{ (new Date(post.created_at)).toLocaleString('en-US', {
